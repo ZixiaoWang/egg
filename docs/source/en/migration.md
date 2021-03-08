@@ -210,10 +210,10 @@ class BizService extends Service {
 const [ news, user ] = await ctx.service.biz.list(topic, uid);
 ```
 
-If the interfaces are unchangeable, e can do things below as a workaround:
+If the interfaces are unchangeable, we can do things below as a workaround:
 
 - Use [app.toPromise] method provided by our Utils.
-- **This is built on top of the [co], so it may still cause performance issue and returning inaccurate error stacks, so this is not recommended.**
+- **This is built on top of the [co], it may still cause performance issue and returning inaccurate error stacks, so this is not recommended.**
 
 ```js
 const { news, user } = await app.toPromise(ctx.service.biz.list(topic, uid));
